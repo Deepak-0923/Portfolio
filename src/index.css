@@ -1,13 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-light text-dark dark:bg-dark dark:text-light transition-colors duration-300;
+
+  margin-bottom: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* Animated Border Utility */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
 }
+
+@keyframes rotateBorder {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
+/* Utility class for animated border */
+.animated-border {
+  background:
+    linear-gradient(45deg, #172033, #1e293b 50%, #172033) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      rgba(100, 116, 139, 0.48) 80%,
+      #6366f1 86%,
+      #a5b4fc 90%,
+      #6366f1 94%,
+      rgba(100, 116, 139, 0.48)
+    )
+    border-box;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  animation: rotateBorder 4s linear infinite;
+}
+@keyframes borderRotate {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
+.animated-border {
+  --border-angle: 0deg;
+  background: linear-gradient(#0f172a, #0f172a) padding-box,
+              conic-gradient(
+                from var(--border-angle),
+                #334155 80%,
+                #3b82f6 86%,
+                #93c5fd 90%,
+                #3b82f6 94%,
+                #334155
+              ) border-box;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  animation: borderRotate 6s linear infinite;
+}
+
+
