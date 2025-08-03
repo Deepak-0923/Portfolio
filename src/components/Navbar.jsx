@@ -27,7 +27,7 @@ const Navbar = () => {
           {/* 👇 Profile icon + name */}
           <h1 className="flex items-center gap-3 text-2xl font-bold text-primary min-w-[300px]">
             <img
-              src="/profile.jpg"
+              src={process.env.PUBLIC_URL + '/profile.jpg'}
               alt="Deepak R"
               onClick={() => setModalOpen(true)}
               className="w-10 h-10 rounded-full border border-primary shadow-sm cursor-pointer hover:scale-105 transition"

@@ -17,7 +17,7 @@ const ProfileModal = ({ isOpen, onClose }) => {
         {/* Modal Content */}
         <div className="flex flex-col items-center space-y-4">
           <img
-            src="/profile.jpg"
+            src={process.env.PUBLIC_URL + '/profile.jpg'}
             alt="Deepak R"
             className="w-20 h-20 rounded-full border-2 border-primary"
           />

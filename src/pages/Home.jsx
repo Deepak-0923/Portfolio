@@ -26,7 +26,7 @@ const Home = () => {
       </p>
 
       <a
-        href="/resume.pdf"
+        href={process.env.PUBLIC_URL + '/resume.pdf'}
         download
         onClick={handleDownload}
         className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition animated-border"
